@@ -771,12 +771,12 @@ def replay_traffic():
 
 # ---------------- GUI ----------------
 root = tk.Tk()
-root.title("AI-Driven IDS (Flow, Multi-class)")
+root.title("IDS (Flow, Multi-class)")
 
 frame = tk.Frame(root)
 frame.pack(padx=10, pady=10)
 
-label = tk.Label(frame, text="AI-Driven IDS (Flow, Multi-class)", font=("Helvetica", 15))
+label = tk.Label(frame, text="IDS (Flow, Multi-class)", font=("Helvetica", 15))
 label.pack(pady=8)
 
 # Model load/switch row
