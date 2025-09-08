@@ -1,0 +1,42 @@
+# Python junk
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.log
+
+# Environments
+.venv/
+env/
+venv/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Data and models (keep placeholder READMEs)
+data/**
+!data/README.md
+models/**
+!models/README.md
+
+# Big local datasets & artifacts (IGNORE THESE)
+datasets 2017/
+cm_out/
+figs_out/
+scored_outputs/
+scored_outputs_mc/
+*.pcap
+*.pcap_ISCX.csv
+cicids_train_flows.csv
+cicids_train_flows.meta.json
+
+# Reports (keep metrics.json)
+reports/*.png
+reports/*.csv
+reports/*.txt
+!reports/metrics.json
+
+scored_flows_*.csv
+packet_log.txt

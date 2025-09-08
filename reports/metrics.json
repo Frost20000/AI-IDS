@@ -1,0 +1,6 @@
+{
+  "accuracy": 0.98,
+  "macro_f1": 0.82,
+  "weighted_f1": 0.99,
+  "_note": "Example metrics from thesis run (seed=1). Overwrite by evaluation."
+}
