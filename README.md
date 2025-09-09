@@ -46,5 +46,4 @@ python -m src.eval_rf --csv data/processed/flows.csv --model models/rf_model.pkl
 - confusion_matrix_counts.png
 - confusion_matrix_normalized.png
 
-Notes:
-- Keep data/ and models/ out of git (.gitignore handles this).
+
