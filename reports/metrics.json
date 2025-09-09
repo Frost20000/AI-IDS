@@ -1,23 +1,11 @@
 {
-  "accuracy": 0.9848350717832262,
-  "macro_f1": 0.8140568948544649,
-  "weighted_f1": 0.9863342612680077,
+  "accuracy": 0.9998,
+  "macro_f1": 0.6663767044683332,
+  "weighted_f1": 0.9997749541781359,
   "classes": [
     "BENIGN",
-    "Bot",
     "DDoS",
-    "DoS GoldenEye",
-    "DoS Hulk",
-    "DoS Slowhttptest",
-    "DoS slowloris",
-    "FTP-Patator",
-    "Heartbleed",
-    "Infiltration",
-    "PortScan",
-    "SSH-Patator",
-    "Web Attack - Brute Force",
-    "Web Attack - Sql Injection",
-    "Web Attack - XSS"
+    "PortScan"
   ],
   "_note": "Meta mapping applied; Hungarian fallback used if needed."
 }
