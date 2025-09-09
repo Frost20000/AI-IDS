@@ -59,3 +59,5 @@ packet_log.txt
 rf_flow_mc.pkl
 rf_flow_mc.meta.json
 rf_flow_mc.meta.confusion_matrix.csv
+
+.evalvenv/
