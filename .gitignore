@@ -46,3 +46,9 @@ packet_log.txt
 !reports/confusion_matrix_normalized.png
 !reports/confusion_matrix_counts.csv
 !reports/classification_report.txt
+
+# keep these report artifacts tracked
+!reports/confusion_matrix_counts.png
+!reports/confusion_matrix_normalized.png
+!reports/confusion_matrix_counts.csv
+!reports/classification_report.txt
