@@ -40,3 +40,9 @@ reports/*.txt
 
 scored_flows_*.csv
 packet_log.txt
+
+# Keep selected report artifacts in git
+!reports/confusion_matrix_counts.png
+!reports/confusion_matrix_normalized.png
+!reports/confusion_matrix_counts.csv
+!reports/classification_report.txt
