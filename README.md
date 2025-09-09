@@ -10,3 +10,7 @@ Confusion matrices and full report are in `reports/`.
 
 ## Confusion matrix (row-normalized)
 ![](reports/confusion_matrix_normalized.png)
+
+## Confusion matrix (row-normalized)
+![](reports/confusion_matrix_normalized.png)
+
