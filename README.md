@@ -32,3 +32,17 @@ python src/eval_rf.py \
   --meta rf_flow_mc.meta.json \
   --reports-dir reports
 
+
+## Overview
+Flow-based IDS on CICIDS2017 using a multiclass RandomForest. Reproducible training and evaluation. A simple live-demo stub is included (no packet capture by default).
+
+## Dataset
+Place the original CICIDS2017 daily CSVs under:
+
+
+## Overview
+Flow-based IDS on CICIDS2017 using a multiclass RandomForest. Reproducible training and evaluation. A simple live-demo stub is included (no packet capture by default).
+
+## Dataset
+Place the original CICIDS2017 daily CSVs under:
+

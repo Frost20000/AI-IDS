@@ -1,24 +1,21 @@
                             precision    recall  f1-score   support
 
-                    BENIGN       0.93      0.95      0.94     24000
-                       Bot       0.38      0.99      0.55       393
+                    BENIGN       0.99      0.95      0.97     24000
+                       Bot       0.38      0.90      0.53       393
                       DDoS       1.00      1.00      1.00     24000
-             DoS GoldenEye       0.00      0.00      0.00      2059
-                  DoS Hulk       0.97      1.00      0.98     24000
-          DoS Slowhttptest       0.99      1.00      0.99      1100
-             DoS slowloris       1.00      1.00      1.00      1159
+             DoS GoldenEye       0.99      0.99      0.99      2059
+                  DoS Hulk       0.99      1.00      0.99     24000
+          DoS Slowhttptest       0.99      0.99      0.99      1100
+             DoS slowloris       1.00      0.99      0.99      1159
                FTP-Patator       1.00      1.00      1.00      1588
-                Heartbleed       0.00      0.00      0.00         2
-              Infiltration       1.00      1.00      1.00         7
+                Heartbleed       1.00      1.00      1.00         2
+              Infiltration       1.00      0.86      0.92         7
                   PortScan       1.00      1.00      1.00     24000
-               SSH-Patator       0.78      0.94      0.85      1180
-  Web Attack - Brute Force       0.00      0.00      0.00       302
+               SSH-Patator       0.77      0.95      0.85      1180
+  Web Attack - Brute Force       0.64      0.73      0.68       302
 Web Attack - Sql Injection       0.00      0.00      0.00         4
-          Web Attack - XSS       0.00      0.00      0.00       130
-  Web Attack � Brute Force       0.00      0.00      0.00         0
-Web Attack � Sql Injection       0.00      0.00      0.00         0
-          Web Attack � XSS       0.00      0.00      0.00         0
+          Web Attack - XSS       0.33      0.25      0.29       130
 
-                  accuracy                           0.96    103924
-                 macro avg       0.50      0.55      0.52    103924
-              weighted avg       0.95      0.96      0.96    103924
+                  accuracy                           0.98    103924
+                 macro avg       0.80      0.84      0.81    103924
+              weighted avg       0.99      0.98      0.99    103924

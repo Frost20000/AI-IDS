@@ -1,19 +1,16 @@
-,BENIGN,Bot,DDoS,DoS GoldenEye,DoS Hulk,DoS Slowhttptest,DoS slowloris,FTP-Patator,Heartbleed,Infiltration,PortScan,SSH-Patator,Web Attack - Brute Force,Web Attack - Sql Injection,Web Attack - XSS,Web Attack � Brute Force,Web Attack � Sql Injection,Web Attack � XSS
-BENIGN,22838,641,2,0,171,3,0,4,0,0,0,295,0,0,0,22,12,12
-Bot,4,389,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-DDoS,6,3,23991,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-DoS GoldenEye,1580,0,0,0,472,4,0,0,0,0,0,0,0,0,0,0,3,0
-DoS Hulk,96,0,0,0,23898,0,0,0,0,0,1,0,0,0,0,0,0,5
-DoS Slowhttptest,1,0,0,0,0,1096,1,0,0,0,0,2,0,0,0,0,0,0
-DoS slowloris,1,0,0,0,0,3,1155,0,0,0,0,0,0,0,0,0,0,0
-FTP-Patator,0,0,0,0,0,0,0,1588,0,0,0,0,0,0,0,0,0,0
-Heartbleed,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Infiltration,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0
-PortScan,9,0,0,0,0,0,0,0,0,0,23988,0,0,0,0,3,0,0
-SSH-Patator,12,0,0,0,0,0,0,0,0,0,0,1109,0,0,0,5,54,0
-Web Attack - Brute Force,1,0,0,0,0,0,0,0,0,0,0,20,0,0,0,237,1,43
-Web Attack - Sql Injection,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0
-Web Attack - XSS,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,10,0,119
-Web Attack � Brute Force,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Web Attack � Sql Injection,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Web Attack � XSS,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+,BENIGN,Bot,DDoS,DoS GoldenEye,DoS Hulk,DoS Slowhttptest,DoS slowloris,FTP-Patator,Heartbleed,Infiltration,PortScan,SSH-Patator,Web Attack - Brute Force,Web Attack - Sql Injection,Web Attack - XSS
+BENIGN,22836,585,4,7,218,3,1,4,0,0,0,304,22,4,12
+Bot,39,354,0,0,0,0,0,0,0,0,0,0,0,0,0
+DDoS,3,3,23994,0,0,0,0,0,0,0,0,0,0,0,0
+DoS GoldenEye,8,0,0,2046,2,3,0,0,0,0,0,0,0,0,0
+DoS Hulk,69,0,0,6,23919,0,0,0,0,0,1,0,0,0,5
+DoS Slowhttptest,3,0,0,0,0,1092,3,0,0,0,0,2,0,0,0
+DoS slowloris,2,0,0,1,0,5,1150,0,0,0,0,0,1,0,0
+FTP-Patator,2,0,0,0,0,0,0,1586,0,0,0,0,0,0,0
+Heartbleed,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0
+Infiltration,1,0,0,0,0,0,0,0,0,6,0,0,0,0,0
+PortScan,1,0,0,0,0,0,1,0,0,0,23994,1,2,0,1
+SSH-Patator,8,0,0,0,0,0,0,0,0,0,0,1116,9,47,0
+Web Attack - Brute Force,7,0,0,0,0,0,0,0,0,0,1,23,220,1,50
+Web Attack - Sql Injection,0,0,0,1,0,0,0,0,0,0,0,3,0,0,0
+Web Attack - XSS,5,0,0,0,1,1,0,0,0,0,0,0,90,0,33
