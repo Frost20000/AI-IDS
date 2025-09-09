@@ -21,15 +21,20 @@ data/
   raw/
     CICIDS2017/
       Monday-WorkingHours.pcap_ISCX.csv
-      Tuesday-WorkingHours.pcap_ISCX.csv
-      Wednesday-workingHours.pcap_ISCX.csv
-      Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv
-      Thursday-WorkingHours-Afternoon-Infiltration.pcap_ISCX.csv
-      Friday-WorkingHours-Morning.pcap_ISCX.csv
-      Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
-      Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
-  processed/
-    flows.csv
+
+Tuesday-WorkingHours.pcap_ISCX.csv
+
+Wednesday-workingHours.pcap_ISCX.csv
+
+Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv
+
+Thursday-WorkingHours-Afternoon-Infiltration.pcap_ISCX.csv
+
+Friday-WorkingHours-Morning.pcap_ISCX.csv
+
+Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
+
+Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
 
 ## Build flows.csv
 python -m src.data_prep --raw-dir data/raw/CICIDS2017 --out data/processed/flows.csv
