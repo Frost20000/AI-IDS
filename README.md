@@ -17,6 +17,7 @@ Acc 0.9998 · Macro-F1 0.6664 · Weighted-F1 0.9998
 3) pip install -r requirements.txt
 
 ## Dataset layout (no data in git)
+```text
 data/
   raw/
     CICIDS2017/
@@ -30,6 +31,7 @@ data/
       Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
   processed/
     flows.csv
+
 
 ## Build flows.csv
 python -m src.data_prep --raw-dir data/raw/CICIDS2017 --out data/processed/flows.csv
