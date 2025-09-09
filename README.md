@@ -46,3 +46,76 @@ Flow-based IDS on CICIDS2017 using a multiclass RandomForest. Reproducible train
 ## Dataset
 Place the original CICIDS2017 daily CSVs under:
 
+## Dataset layout
+
+Place the original CICIDS2017 daily CSVs here (no data in git):
+
+data/
+raw/
+CICIDS2017/
+Monday-WorkingHours.pcap_ISCX.csv
+Tuesday-WorkingHours.pcap_ISCX.csv
+Wednesday-workingHours.pcap_ISCX.csv
+Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv
+Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv
+Friday-WorkingHours-Morning.pcap_ISCX.csv
+Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
+Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
+processed/
+flows.csv # produced by src.data_prep
+md
+## Dataset layout
+
+Place the original CICIDS2017 daily CSVs here (no data in git):
+
+data/
+raw/
+CICIDS2017/
+Monday-WorkingHours.pcap_ISCX.csv
+Tuesday-WorkingHours.pcap_ISCX.csv
+Wednesday-workingHours.pcap_ISCX.csv
+Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv
+Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv
+Friday-WorkingHours-Morning.pcap_ISCX.csv
+Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
+Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
+processed/
+flows.csv # produced by src.data_prep
+
+
+## Dataset layout
+
+Place the original CICIDS2017 daily CSVs here (no data in git):
+
+
+data/
+raw/
+CICIDS2017/
+Monday-WorkingHours.pcap_ISCX.csv
+Tuesday-WorkingHours.pcap_ISCX.csv
+Wednesday-workingHours.pcap_ISCX.csv
+Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv
+Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv
+Friday-WorkingHours-Morning.pcap_ISCX.csv
+Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
+Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
+processed/
+flows.csv # produced by src.data_prep
+
+## Dataset layout
+
+Place the original CICIDS2017 daily CSVs here (no data in git):
+
+data/
+raw/
+CICIDS2017/
+Monday-WorkingHours.pcap_ISCX.csv
+Tuesday-WorkingHours.pcap_ISCX.csv
+Wednesday-workingHours.pcap_ISCX.csv
+Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv
+Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv
+Friday-WorkingHours-Morning.pcap_ISCX.csv
+Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
+Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
+processed/
+flows.csv # produced by src.data_prep
