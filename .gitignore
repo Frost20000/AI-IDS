@@ -52,3 +52,10 @@ packet_log.txt
 !reports/confusion_matrix_normalized.png
 !reports/confusion_matrix_counts.csv
 !reports/classification_report.txt
+
+# Local eval-only env
+.evalvenv/
+# External GUI model kept local (not tracked)
+rf_flow_mc.pkl
+rf_flow_mc.meta.json
+rf_flow_mc.meta.confusion_matrix.csv

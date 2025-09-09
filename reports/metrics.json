@@ -1,6 +1,26 @@
 {
-  "accuracy": 0.9848,
-  "macro_f1": 0.8141,
-  "weighted_f1": 0.9863,
-  "_note": "Metrics from local run (seed=1, 400 trees)."
+  "accuracy": 0.9628093606866557,
+  "macro_f1": 0.517325884026298,
+  "weighted_f1": 0.9551180357703236,
+  "classes": [
+    "BENIGN",
+    "Bot",
+    "DDoS",
+    "DoS GoldenEye",
+    "DoS Hulk",
+    "DoS Slowhttptest",
+    "DoS slowloris",
+    "FTP-Patator",
+    "Heartbleed",
+    "Infiltration",
+    "PortScan",
+    "SSH-Patator",
+    "Web Attack - Brute Force",
+    "Web Attack - Sql Injection",
+    "Web Attack - XSS",
+    "Web Attack \ufffd Brute Force",
+    "Web Attack \ufffd Sql Injection",
+    "Web Attack \ufffd XSS"
+  ],
+  "_note": "Meta mapping applied; Hungarian fallback used if needed."
 }
