@@ -8,6 +8,11 @@ train a multiclass RandomForest, and save metrics and plots.
 Accuracy 0.9848 · Macro-F1 0.8141 · Weighted-F1 0.9863  
 *Sanity run (small mixed sample):* Acc 0.9998 · Macro-F1 0.6664 · Weighted-F1 0.9998
 
+**Evaluation split:** Metrics are computed on the **held-out 20%** (stratified, `random_state=1`).
+
+## Runtime (tested)
+Python 3.12 · scikit-learn 1.4.x · numpy 2.0.x · pandas 2.2.x
+
 ## Quickstart
 ```bash
 python3 -m venv .venv
