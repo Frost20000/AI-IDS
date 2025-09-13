@@ -1,8 +1,8 @@
 # AI-IDS (CICIDS2017, RandomForest)
 
 ## Overview
-Flow-based intrusion detection on CICIDS2017. One consolidated flow table from daily CSVs,
-multiclass RandomForest, saved metrics and plots.
+Flow-based intrusion detection on CICIDS2017. We consolidate the daily CSVs into one flow table,
+train a multiclass RandomForest, and save metrics and plots.
 
 **Results (thesis run):**  
 Accuracy 0.9848 · Macro-F1 0.8141 · Weighted-F1 0.9863  
@@ -11,7 +11,7 @@ Accuracy 0.9848 · Macro-F1 0.8141 · Weighted-F1 0.9863
 ## Quickstart
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate    # Windows: .venv\Scripts\Activate.ps1
+source .venv/bin/activate  # Windows: .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 Dataset layout (no data in git)
 text
