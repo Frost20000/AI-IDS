@@ -5,22 +5,22 @@ Detect network attacks from **flow statistics** (no payload). Train and evaluate
 
 ## Data
 - Source: CICIDS2017 daily CSVs (Mon–Fri).
-- Storage: raw CSVs are **not** in git. Place them under `data/raw/CICIDS2017/`.
+- Storage: raw CSVs are **not** in git; expected path: `data/raw/CICIDS2017/`.
 - Features: 37 flow features (packet/byte counts, inter-arrival times, header flags, simple rates).
 - Labels: the label map used by the model is stored in `models/meta.json` (`label_names`).
 
 ## Method (how it works)
-1. **Prepare flows** : `src/data_prep.py`  
+1. **Prepare flows** — `src/data_prep.py`  
    - reads the daily CSVs  
    - normalizes headers (ensures `Label`) and coerces types  
    - handles NaN and ±∞ (replace where safe; drop rows still invalid)  
    - writes `data/processed/flows.csv` (37 features + `Label`)
-2. **Train** : `src/train_rf.py`  
+2. **Train** — `src/train_rf.py`  
    - algorithm: `RandomForestClassifier`  
    - params: `n_estimators=400`, `class_weight=balanced_subsample`, `random_state=1`, `max_depth=100` (CLI requires an int here)  
    - split: **stratified 80/20 by label** (`random_state=1`)  
    - saves `models/rf_model.pkl` and `models/meta.json`
-3. **Evaluate** : `src/eval_rf.py`  
+3. **Evaluate** — `src/eval_rf.py`  
    - metrics on the **held-out 20%**: Accuracy, Macro-F1, Weighted-F1  
    - artifacts: `reports/metrics.json`, `reports/classification_report.txt`, `reports/confusion_matrix_counts.png`, `reports/confusion_matrix_normalized.png`
 
@@ -30,9 +30,9 @@ A small mixed **sanity run** is included for a quick environment check (numbers 
 
 ## Reproducibility
 - Environment: see `requirements.txt` (Python and packages pinned).  
-- Seeds: `random_state=1` for split and model.  
+- Seed: `random_state=1` (split and model).  
 - Feature names and label map are in `models/meta.json`.  
-- Re-run using the three commands in the README (**Build / Train / Evaluate**).
+- Reproducibility is demonstrated by the three commands in the README (**Build / Train / Evaluate**).
 
 ## Outputs in the repo
 - **Model:** `models/rf_model.pkl`, `models/meta.json`  
@@ -44,6 +44,6 @@ A small mixed **sanity run** is included for a quick environment check (numbers 
 - `max_depth=100` is used to satisfy the CLI; this choice does **not** change the thesis conclusions.
 
 ## Quick review guide
-1. Open `reports/metrics.json` → verify the three metrics above.  
-2. Open both confusion-matrix PNGs → check class distribution/errors; labels match `models/meta.json`.  
-3. See `src/` → entry points: `data_prep.py`, `train_rf.py`, `eval_rf.py`.
+- The three metrics are recorded in `reports/metrics.json`.  
+- Confusion-matrix PNGs show class distribution/errors; labels match `models/meta.json`.  
+- Entry points in `src/`: `data_prep.py`, `train_rf.py`, `eval_rf.py`.
