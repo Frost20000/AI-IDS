@@ -1,24 +1,49 @@
-# Thesis sketch — AI-IDS (flow-based IDS on CICIDS2017)
+# Thesis sketch — AI-IDS (CICIDS2017)
 
-**Problem.** Detect network attacks from flow statistics (no payload) using CICIDS2017.
+## Scope
+Detect network attacks from **flow statistics** (no payload). Train and evaluate a **multiclass** model on CICIDS2017. Provide end-to-end code and keep evaluation artifacts in the repo.
 
-**Goal.** Train and evaluate a multiclass model; provide reproducible code, saved metrics/plots, and a small demo stub.
+## Data
+- Source: CICIDS2017 daily CSVs (Mon–Fri).
+- Storage: raw CSVs are **not** in git. Place them under `data/raw/CICIDS2017/`.
+- Features: 37 flow features (packet/byte counts, inter-arrival times, header flags, simple rates).
+- Labels: the label map used by the model is stored in `models/meta.json` (`label_names`).
 
-**Dataset.** CICIDS2017 daily CSVs (Mon–Fri). 37 flow features: packet/byte counts, IATs, flags, simple rates. Raw data is not stored in the repo.
+## Method (how it works)
+1. **Prepare flows** : `src/data_prep.py`  
+   - reads the daily CSVs  
+   - normalizes headers (ensures `Label`) and coerces types  
+   - handles NaN and ±∞ (replace where safe; drop rows still invalid)  
+   - writes `data/processed/flows.csv` (37 features + `Label`)
+2. **Train** : `src/train_rf.py`  
+   - algorithm: `RandomForestClassifier`  
+   - params: `n_estimators=400`, `class_weight=balanced_subsample`, `random_state=1`, `max_depth=100` (CLI requires an int here)  
+   - split: **stratified 80/20 by label** (`random_state=1`)  
+   - saves `models/rf_model.pkl` and `models/meta.json`
+3. **Evaluate** : `src/eval_rf.py`  
+   - metrics on the **held-out 20%**: Accuracy, Macro-F1, Weighted-F1  
+   - artifacts: `reports/metrics.json`, `reports/classification_report.txt`, `reports/confusion_matrix_counts.png`, `reports/confusion_matrix_normalized.png`
 
-**Method.**
-- Build a single `flows.csv` from daily files; normalize headers; handle NaN/±inf.
-- Model: RandomForest (`n_estimators=400`, `class_weight=balanced_subsample`, `random_state=1`, `max_depth=100` here).
-- Split 80/20 (seed=1). Metrics: accuracy, macro-F1, weighted-F1. Save confusion matrices and a text report.
+## Results (thesis run)
+Accuracy **0.9848** · Macro-F1 **0.8141** · Weighted-F1 **0.9863**  
+A small mixed **sanity run** is included for a quick environment check (numbers shown in the README).
 
-**Results (thesis run).** Accuracy 0.9848 · Macro-F1 0.8141 · Weighted-F1 0.9863.  
-*A small mixed “sanity run” is included for quick verification.*
+## Reproducibility
+- Environment: see `requirements.txt` (Python and packages pinned).  
+- Seeds: `random_state=1` for split and model.  
+- Feature names and label map are in `models/meta.json`.  
+- Re-run using the three commands in the README (**Build / Train / Evaluate**).
 
-**Outputs.**
-- `models/rf_model.pkl`, `models/meta.json`
-- `reports/metrics.json`, `reports/classification_report.txt`,
-  `reports/confusion_matrix_counts.png`, `reports/confusion_matrix_normalized.png`
+## Outputs in the repo
+- **Model:** `models/rf_model.pkl`, `models/meta.json`  
+- **Reports:** `reports/metrics.json`, `reports/classification_report.txt`, `reports/confusion_matrix_counts.png`, `reports/confusion_matrix_normalized.png`
 
-**Limitations.** Class imbalance affects macro-F1; flow-level features only (no payload). Max depth capped for the CLI; this does not change conclusions.
+## Limitations
+- Class imbalance lowers Macro-F1 relative to Accuracy/Weighted-F1.  
+- Flow-level features only (no payload).  
+- `max_depth=100` is used to satisfy the CLI; this choice does **not** change the thesis conclusions.
 
-**What to review quickly.** README “How it works”, reports PNGs/JSON, and `src/` modules (`data_prep`, `train_rf`, `eval_rf`).
+## Quick review guide
+1. Open `reports/metrics.json` → verify the three metrics above.  
+2. Open both confusion-matrix PNGs → check class distribution/errors; labels match `models/meta.json`.  
+3. See `src/` → entry points: `data_prep.py`, `train_rf.py`, `eval_rf.py`.
