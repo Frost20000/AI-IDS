@@ -16,7 +16,7 @@ Detect network attacks from **flow statistics** (no payload). Train and evaluate
    - writes `data/processed/flows.csv` (37 features + `Label`)
 2. **Train** — `src/train_rf.py`  
    - algorithm: `RandomForestClassifier`  
-   - params: `n_estimators=400`, `class_weight=balanced_subsample`, `random_state=1`, `max_depth=100`  
+   - params: `n_estimators=400`, `class_weight=balanced_subsample`, `random_state=1`, `max_depth=100`(CLI requires an int here)  
    - split: **stratified 80/20 by label** (`random_state=1`)  
    - saves `models/rf_model.pkl` and `models/meta.json`
 3. **Evaluate** — `src/eval_rf.py`  
