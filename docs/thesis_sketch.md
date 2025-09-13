@@ -1,8 +1,7 @@
 # Thesis sketch — AI-IDS (CICIDS2017)
 
 ## Scope
-Detect network attacks from **flow statistics** (no payload). Train and evaluate a **multiclass** model on CICIDS2017. Provide end-to-end code and keep evaluation artifacts in the repo.
-
+Detect network attacks from **flow statistics** (no payload). Train and evaluate a **multiclass** model on CICIDS2017. 
 ## Data
 - Source: CICIDS2017 daily CSVs (Mon–Fri).
 - Storage: raw CSVs are **not** in git; expected path: `data/raw/CICIDS2017/`.
