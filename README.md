@@ -33,11 +33,7 @@ Build / Train / Evaluate
 bash
 Copy code
 python -m src.data_prep --raw-dir data/raw/CICIDS2017 --out data/processed/flows.csv
-bash
-Copy code
 python -m src.train_rf --csv data/processed/flows.csv --random-state 1 --n-estimators 400 --max-depth 100 --class-weight balanced_subsample --out-model models/rf_model.pkl --out-meta models/meta.json --reports-dir reports
-bash
-Copy code
 python -m src.eval_rf --csv data/processed/flows.csv --model models/rf_model.pkl --meta models/meta.json --reports-dir reports
 Artifacts (in reports/)
 metrics.json
