@@ -164,5 +164,12 @@ Feature warnings in the log mean a feature isn’t computed live; it’s zero-fi
 python scripts/validate_data.py --raw-dir data/raw/CICIDS2017 --flows data/processed/flows.csv
 This confirms the 8 files are present, header/schema (incl. Label) are correct, prints per-class counts, and writes checksums to reports/checksums.txt.
 
-## Baseline (for comparison)
+## Baselines & Benchmark
+
+## Baselines (train quickly on the same split)
 python -m src.train_logreg --csv data/processed/flows.csv --reports-dir reports
+python -m src.train_xgb_or_hgb --csv data/processed/flows.csv --reports-dir reports
+
+## One-shot benchmark table (LogReg vs RF vs XGBoost/HGB)
+python -m src.benchmark --csv data/processed/flows.csv --reports-dir reports
+#### reports/benchmarks.csv and reports/benchmarks.md
