@@ -149,13 +149,15 @@ Predictions and heuristic alerts (PortScan/DDoS) stream in the log window. Click
 ## CSV replay schema (required columns):
 src_ip, dst_ip, protocol, time_to_live, src_port, dst_port, tcp_flags, seq_num, ack_num, window_size, packet_size
 
-## Notes
+## Notes / Troubleshooting
 
-Live sniffing runs in user space via Scapy; no packets are transmitted.
+ModuleNotFoundError: scapy → pip install scapy.
 
-The GUI computes the flow features it can from packets; any missing features are zero-filled (warned in the log).
+PermissionError on sniff → run with sudo / Administrator.
 
-Demo scope: shows flow feature aggregation → model inference; not a complete SIEM/NIDS product.
+“No interface found” → run with privileges or ensure a pcap driver (Npcap) is installed (Windows).
+
+Feature warnings in the log mean a feature isn’t computed live; it’s zero-filled (by design for the demo).
 
 ## Data integrity check
 
