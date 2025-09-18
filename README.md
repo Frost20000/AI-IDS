@@ -69,6 +69,13 @@ python3 -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
+## Troubleshooting (pandas error)
+
+If you see ModuleNotFoundError: No module named 'pandas', your virtualenv isn’t active or requirements weren’t installed.
+### Run:
+
+`python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt`
+
 
 # 1) Build consolidated flows.csv from daily CSVs
 python -m src.data_prep --raw-dir data/raw/CICIDS2017 --out data/processed/flows.csv
@@ -173,3 +180,83 @@ python -m src.train_xgb_or_hgb --csv data/processed/flows.csv --reports-dir repo
 ## One-shot benchmark table (LogReg vs RF vs XGBoost/HGB)
 python -m src.benchmark --csv data/processed/flows.csv --reports-dir reports
 #### reports/benchmarks.csv and reports/benchmarks.md
+## Benchmarks (RF vs baseline)
+After training RF and the baseline, see reports/benchmarks.md for a comparison table.
+Artifacts for the baseline are saved as metrics_logreg.json and confusion matrices with the logreg_ prefix.
+
+## GUI (flow IDS demo)
+
+A simple Tkinter/Scapy GUI for live sniffing or CSV replay with the trained model.
+
+* Location: scripts/live_ids_gui_flow_mc.py
+
+* Purpose: demo only (teaching/inspection). Not production-hardened.
+
+## Requirements
+pip install scapy
+
+
+* Linux/macOS: may need python3-tk (e.g., sudo apt-get install python3-tk).
+
+* Windows: install Npcap (packet capture driver).
+
+* Live sniffing usually needs admin privileges (Linux/macOS: sudo; Windows: run PowerShell “as Administrator”).
+
+## Model & meta
+
+The GUI has a “Load Model + Meta” button. Click it and select your trained files:
+
+models/rf_model.pkl
+
+models/meta.json
+
+(Optional) If you keep rf_flow_mc.pkl / rf_flow_mc.meta.json next to the script, it will try to auto-load them at start.
+
+### Run
+
+#### Linux
+
+sudo -E $(which python) scripts/live_ids_gui_flow_mc.py
+
+
+#### macOS
+
+sudo python3 scripts/live_ids_gui_flow_mc.py
+
+
+#### Windows (PowerShell, as Administrator)
+
+python scripts\live_ids_gui_flow_mc.py
+
+## Using the app
+
+Click Load Model + Meta (pick models/rf_model.pkl and models/meta.json).
+
+Choose a network interface and click Start Live Monitoring, or click Replay Traffic (CSV) to play a packet-level CSV.
+
+Predictions and heuristic alerts (PortScan/DDoS) stream in the log window. Click Stop Monitoring for a brief per-flow summary.
+
+## CSV replay (required columns):
+src_ip, dst_ip, protocol, time_to_live, src_port, dst_port, tcp_flags, seq_num, ack_num, window_size, packet_size
+
+## Notes / Troubleshooting
+
+ModuleNotFoundError: scapy → pip install scapy.
+
+PermissionError on sniff → run with sudo / as Administrator.
+
+“No interface found” → ensure privileges and a capture driver (Npcap on Windows).
+
+Feature warnings in the log mean a feature isn’t computed live; it’s zero-filled (by design for the demo).
+
+## Data integrity check
+python scripts/validate_data.py --raw-dir data/raw/CICIDS2017 --flows data/processed/flows.csv
+
+
+This confirms the 8 files are present, header/schema (incl. Label) are correct, prints per-class counts, and writes checksums to reports/checksums.txt.
+
+## Notes
+
+Data files are not tracked in git; folders may include .gitkeep to preserve structure.
+
+The GUI is an instructional demo. The core deliverable is a clean, reproducible pipeline with saved artifacts.
