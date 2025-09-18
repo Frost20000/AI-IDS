@@ -1,0 +1,4 @@
+model=sklearn-hgb
+accuracy=0.9896
+macro_f1=0.6641
+weighted_f1=0.9945
