@@ -101,6 +101,62 @@ confusion_matrix_counts.png
 
 confusion_matrix_normalized.png
 
+# GUI (flow IDS demo)
+
+A simple Tkinter/Scapy GUI for live sniffing or CSV replay with the trained model.
+
+Location: scripts/live_ids_gui_flow_mc.py
+Purpose: demo only (teaching/inspection). Not production-hardened.
+
+## Requirements
+
+pip install scapy
+
+Linux/macOS: may need python3-tk (e.g., sudo apt-get install python3-tk).
+
+Windows: install Npcap (packet capture driver).
+
+Live sniffing usually needs admin privileges (Linux/macOS: sudo; Windows: run as Administrator).
+
+## Model & meta
+
+The GUI has a “Load Model + Meta” button. Click it and select your trained files:
+
+models/rf_model.pkl
+
+models/meta.json
+
+(Optional) If you keep rf_flow_mc.pkl / rf_flow_mc.meta.json next to the script, it will try to auto-load them at start.
+
+# Run
+## Linux
+sudo -E $(which python) scripts/live_ids_gui_flow_mc.py
+
+## macOS
+sudo python3 scripts/live_ids_gui_flow_mc.py
+
+## Windows (PowerShell, as Administrator)
+python scripts\live_ids_gui_flow_mc.py
+
+## Using the app
+
+Click Load Model + Meta (pick your models/rf_model.pkl and models/meta.json).
+
+Choose a network interface (for live mode) and click Start Live Monitoring, or click Replay Traffic (CSV) to play a packet-level CSV.
+
+Predictions and heuristic alerts (PortScan/DDoS) stream in the log window. Click Stop Monitoring to print a brief per-flow summary.
+
+## CSV replay schema (required columns):
+src_ip, dst_ip, protocol, time_to_live, src_port, dst_port, tcp_flags, seq_num, ack_num, window_size, packet_size
+
+## Notes
+
+Live sniffing runs in user space via Scapy; no packets are transmitted.
+
+The GUI computes the flow features it can from packets; any missing features are zero-filled (warned in the log).
+
+Demo scope: shows flow feature aggregation → model inference; not a complete SIEM/NIDS product.
+
 ## Data integrity check
 
 python scripts/validate_data.py --raw-dir data/raw/CICIDS2017 --flows data/processed/flows.csv
