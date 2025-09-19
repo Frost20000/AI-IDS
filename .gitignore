@@ -15,13 +15,13 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Data and models (keep placeholder READMEs)
+# Data and models
 data/**
 !data/README.md
 models/**
 !models/README.md
 
-# Big local datasets & artifacts (IGNORE THESE)
+# Big local datasets & artifacts
 datasets 2017/
 cm_out/
 figs_out/
@@ -55,7 +55,7 @@ packet_log.txt
 
 # Local eval-only env
 .evalvenv/
-# External GUI model kept local (not tracked)
+# External GUI model kept local
 rf_flow_mc.pkl
 rf_flow_mc.meta.json
 rf_flow_mc.meta.confusion_matrix.csv
